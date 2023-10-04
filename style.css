@@ -1,0 +1,14 @@
+@font-face {
+  font-family: Norse-Bold;
+  src: url(fonts/Norse-Bold.otf) format(opentype);
+}
+
+:root {
+  --green-btn: #596D48;
+  --green-link: #596D48;
+  --input-border: #E5E7EB;
+}
+
+.header h1 {
+  font-family: Norse-Bold, sans-serif;
+}
