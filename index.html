@@ -27,27 +27,33 @@
           <div class="form-fields-container">
             <div class="form-field">
               <label for="fname">First name</label>
-              <input type="text" name="user_first_name" id="fname">
+              <!-- show requested format when focused and when trying to submit with invalid input -->
+              <input type="text" name="user_first_name" id="fname" required minlength="3" maxlength="32" pattern="[a-zA-Z]{1,35}">
             </div>
             <div class="form-field">
               <label for="lname">Last name</label>
-              <input type="text" name="user_last_name" id="lname">
+              <!-- show requested format -->
+              <input type="text" name="user_last_name" id="lname" pattern="[a-zA-Z]{1,35}">
             </div>
             <div class="form-field">
               <label for="email">Email</label>
-              <input type="email" name="user_email" id="email">
+              <!-- format -->
+              <input type="email" name="user_email" id="email" required>
             </div>
             <div class="form-field">
               <label for="phone">Phone number</label>
-              <input type="tel" name="user_phone" id="phone">
+              <!-- US number -->
+              <input type="tel" name="user_phone" id="phone" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
             </div>
             <div class="form-field">
               <label for="password">Password</label>
-              <input type="password" name="user_password" id="password">
+              <!-- format -->
+              <input type="password" name="user_password" id="password" 
+              required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
             </div>
             <div class="form-field">
               <label for="confirm-password">Confirm password</label>
-              <input type="password" name="confirm_password" id="confirm-password">
+              <input type="password" name="confirm_password" id="confirm-password" required>
             </div>
           </div>
         </div>
