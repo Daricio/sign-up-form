@@ -13,7 +13,7 @@
   --form-controls-background: #FFF;
   --form-font-color: rgb(31, 41, 55);
   --input-focus: rgb(29, 78, 216);
-  --input-invalid: rgb(185, 28, 28);
+  --pw-error: rgb(185, 28, 28);
 }
 
 *, ::before, ::after {
@@ -101,7 +101,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   column-gap: 7rem;
-  row-gap: 2rem;
+  row-gap: 2.2rem;
 }
 
 .form-field {
@@ -122,7 +122,7 @@ body {
 .form-field input {
   font-family: inherit;
   font-size: 100%;
-  padding: 0.6rem 1rem;
+  padding: 0.6rem 0.8rem;
   width: 100%;
   border: 1px solid var(--input-border);
   border-radius: 3px;
@@ -151,4 +151,29 @@ p.log-in {
   text-decoration: none;
   color: var(--log-in-link);
   font-weight: bold;
+}
+
+input[type="password"].error {
+  border-color: var(--pw-error);
+}
+
+input[type="password"].error+span {
+  position: relative;
+}
+
+input[type="password"].error+span::after {
+  color: var(--pw-error);
+  text-transform: none;
+  font-weight: normal;
+  font-size: 1rem;
+  content: "* Passwords do not match";
+  position: absolute;
+  top: 2px;
+  left: 0;
+}
+
+.form-field input:focus {
+  border: 1px solid var(--input-focus);
+  outline: none;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.1);
 }
