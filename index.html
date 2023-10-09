@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up Form</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <section class="header">
@@ -28,7 +29,7 @@
             <div class="form-field">
               <!-- show requested format when focused and when trying to submit with invalid input -->
               <input type="text" name="user_first_name" id="fname" 
-              required minlength="3" maxlength="32" pattern="[a-zA-Z]{1,35}">
+              required minlength="3" maxlength="32" pattern="[a-zA-Z]{1,35}" onblur="console.log('hi')">
               <label for="fname" data-format="1 to 35 letters">
                 First name <span aria-label="required">*</span>
               </label>
@@ -61,8 +62,8 @@
               <span></span>
             </div>
             <div class="form-field">
-              <input type="password" name="confirm_password" id="confirm-password" required>
-              <label for="confirm-password">
+              <input type="password" name="confirm_password" id="confirm-pw" required>
+              <label for="confirm-pw">
                 Confirm password <span aria-label="required">*</span>
               </label>
             </div>
