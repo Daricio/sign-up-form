@@ -163,18 +163,18 @@ input[type="password"].error {
   border-color: var(--pw-error);
 }
 
-input[type="password"].error+span {
+input[type="password"].error~span {
   position: relative;
 }
 
-input[type="password"].error+span::after {
+input[type="password"].error~span::after {
   color: var(--pw-error);
   text-transform: none;
   font-weight: normal;
   font-size: 1rem;
   content: "* Passwords do not match";
   position: absolute;
-  top: 2px;
+  top: 60px;
   left: 0;
 }
 
