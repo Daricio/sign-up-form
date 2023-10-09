@@ -26,35 +26,48 @@
           <p>Let's do this!</p>
           <div class="form-fields-container">
             <div class="form-field">
-              <label for="fname">First name</label>
+              <!-- <label for="fname" data-format="1 to 35 letters">First name</label> -->
               <!-- show requested format when focused and when trying to submit with invalid input -->
-              <input type="text" name="user_first_name" id="fname" required minlength="3" maxlength="32" pattern="[a-zA-Z]{1,35}">
+              <input type="text" name="user_first_name" id="fname" 
+              required minlength="3" maxlength="32" pattern="[a-zA-Z]{1,35}">
+              <label for="fname" data-format="1 to 35 letters">First name</label>
             </div>
             <div class="form-field">
-              <label for="lname">Last name</label>
+              <!-- <label for="lname" data-format="1 to 35 letters">Last name</label> -->
               <!-- show requested format -->
               <input type="text" name="user_last_name" id="lname" pattern="[a-zA-Z]{1,35}">
+              <label for="lname" data-format="1 to 35 letters">Last name</label>
             </div>
             <div class="form-field">
-              <label for="email">Email</label>
+              <!-- <label for="email" data-format="Format email@email.com">Email</label> -->
               <!-- format -->
               <input type="email" name="user_email" id="email" required>
+              <label for="email" data-format="Format email@email.com">Email</label>
             </div>
             <div class="form-field">
-              <label for="phone">Phone number</label>
+              <!-- <label for="phone" data-format="Format 123-456-7890">Phone number</label> -->
               <!-- US number -->
               <input type="tel" name="user_phone" id="phone" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+              <label for="phone" data-format="Format 123-456-7890">Phone number</label>
             </div>
-            <div class="form-field">
-              <label for="password">Password</label>
+            <div class="form-field password">
+              <!-- <label for="password"
+              data-format="8+ chars, lower- and upper-case, 1+ num/specialChar">
+                Password
+              </label> -->
               <!-- format -->
-              <input type="password" name="user_password" id="password"
+              <input type="password" name="user_password" id="password" class="password"
               required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+              <label for="password"
+              data-format-one="8+ chars, lower- and upper-case," data-format-two="1+ num/specialChar">
+                Password
+              </label>
               <span></span>
             </div>
             <div class="form-field">
-              <label for="confirm-password">Confirm password</label>
+              <!-- <label for="confirm-password">Confirm password</label> -->
               <input type="password" name="confirm_password" id="confirm-password" required>
+              <label for="confirm-password">Confirm password</label>
             </div>
           </div>
         </div>
