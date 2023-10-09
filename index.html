@@ -29,7 +29,9 @@
               <!-- show requested format when focused and when trying to submit with invalid input -->
               <input type="text" name="user_first_name" id="fname" 
               required minlength="3" maxlength="32" pattern="[a-zA-Z]{1,35}">
-              <label for="fname" data-format="1 to 35 letters">First name</label>
+              <label for="fname" data-format="1 to 35 letters">
+                First name <span aria-label="required">*</span>
+              </label>
             </div>
             <div class="form-field">
               <!-- show requested format -->
@@ -39,7 +41,9 @@
             <div class="form-field">
               <!-- format -->
               <input type="email" name="user_email" id="email" required>
-              <label for="email" data-format="Format email@email.com">Email</label>
+              <label for="email" data-format="Format email@email.com">
+                Email <span aria-label="required">*</span>
+              </label>
             </div>
             <div class="form-field">
               <!-- US number -->
@@ -52,13 +56,15 @@
               required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
               <label for="password"
               data-format-one="8+ chars, lower- and upper-case," data-format-two="1+ num/specialChar">
-                Password
+                Password <span aria-label="required">*</span>
               </label>
               <span></span>
             </div>
             <div class="form-field">
               <input type="password" name="confirm_password" id="confirm-password" required>
-              <label for="confirm-password">Confirm password</label>
+              <label for="confirm-password">
+                Confirm password <span aria-label="required">*</span>
+              </label>
             </div>
           </div>
         </div>
