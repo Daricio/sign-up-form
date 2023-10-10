@@ -1,5 +1,6 @@
 const passwordField = document.getElementById('password');
 const confirmPasswordField = document.getElementById('confirm-pw');
+const submitButton = document.getElementById('submit-btn');
 let password;
 let confirmPassword;
 let error = false;
@@ -19,6 +20,7 @@ const validatePasswords = function() {
     checkPasswordsMatch();
   }
   updatePasswordFieldsState();
+  updateSubmitButtonState();
 }
 
 const checkPasswordsMatch = function() {
@@ -31,13 +33,24 @@ const checkPasswordsMatch = function() {
 }
 
 const updatePasswordFieldsState = function() {
-  if (error == true) {
+  if (error) {
     passwordField.classList.add('error');
     confirmPasswordField.classList.add('error');
   }
   else {
     passwordField.classList.remove('error');
     confirmPasswordField.classList.remove('error');
+  }
+}
+
+const updateSubmitButtonState = function() {
+  if (error) {
+    submitButton.onclick = function() {
+      return false;
+    }
+  }
+  else {
+    submitButton.onclick = "";
   }
 }
 
